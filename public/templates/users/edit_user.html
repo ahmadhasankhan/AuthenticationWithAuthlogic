@@ -1,0 +1,43 @@
+<div class="col-md-10">
+    <form class="tab-pane active form-horizontal" id="first" name="productForm" novalidate ng-submit="save()">
+        <h2>Edit resource_name</h2>
+
+        <div class="form-group" ng-class="{'has-error' : submitted && productForm.email.$invalid}">
+            <label class="control-label col-md-3">Email <span class="required">* </span> </label>
+
+            <div class="col-md-4">
+                <input type="email" name="email" class="form-control" ng-model="product.email" required placeholder="email"/>
+            </div>
+            <p ng-show=" submitted && productForm.email.$invalid" class="help-block">Email is required.</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : submitted && productForm.password.$invalid}">
+            <label class="control-label col-md-3">Password <span class="required">* </span> </label>
+
+            <div class="col-md-4">
+                <input type="text" name="password" class="form-control" ng-model="product.password" required placeholder="1.2"/>
+            </div>
+            <p ng-show="submitted && productForm.password.$error.required" class="help-block">Password is required.</p>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-3">Confirm Password </label>
+
+            <div class="col-md-4">
+                <input type="text" name="password_confirmation" class="form-control" ng-model="product.password_confirmation"
+                       placeholder="password_confirmation"/>
+            </div>
+            <p ng-show="submitted && productForm.password_confirmation.$invalid" class="help-block">password_confirmation is required.</p>
+        </div>
+
+
+        <div class="form-group">
+            <div class="pull-left">
+                <a class="btn btn-default" href="/app/assets/images"> Back</a>
+                <button type="submit" class="btn btn-primary" ng-click="submitted=true">Submit</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>

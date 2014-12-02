@@ -1,0 +1,34 @@
+<div class="col-md-10">
+    <form class="tab-pane active form-horizontal" id="first" name="loginForm" novalidate ng-submit="save()">
+        <h2>Sign up</h2>
+
+        <div class="form-group" ng-class="{'has-error' : submitted && loginForm.username.$invalid}">
+            <label class="control-label col-md-3">Email <span class="required">* </span> </label>
+
+            <div class="col-md-4">
+                <input type="text" name="username" class="form-control" ng-model="login.username" required
+                       placeholder="username"/>
+            </div>
+            <p ng-show=" submitted && userForm.username.$invalid" class="help-block">Username is required.</p>
+        </div>
+
+        <div class="form-group" ng-class="{'has-error' : submitted && loginForm.password.$invalid}">
+            <label class="control-label col-md-3">Password <span class="required">* </span> </label>
+
+            <div class="col-md-4">
+                <input type="text" name="password" class="form-control" ng-model="login.password" required
+                       placeholder="1.2"/>
+            </div>
+            <p ng-show="submitted && loginForm.password.$error.required" class="help-block">Password is required.</p>
+        </div>
+
+        <div class="form-group">
+            <div class="pull-left">
+                <a class="btn btn-default" href="/app/assets/images"> Back</a>
+                <button type="submit" class="btn btn-primary" ng-click="submitted=true">Submit</button>
+            </div>
+        </div>
+
+
+    </form>
+</div>
